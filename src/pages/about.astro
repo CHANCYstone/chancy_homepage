@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const skills = [
+  { category: 'LANGUAGES', items: ['Python', 'TypeScript', 'SQL'] },
+  { category: 'FRAMEWORKS', items: ['Astro', 'React', 'FastAPI'] },
+  { category: 'TOOLS', items: ['Git', 'Obsidian', 'Claude'] },
+  { category: 'DOMAINS', items: ['量化交易', 'AI 应用', '写作体系'] },
+];
+---
+
+<Base title="About">
+  <Header />
+  <main>
+    <h1 class="text-[2rem] text-[var(--color-primary)] mb-[var(--spacing-xl)]">
+      ABOUT
+    </h1>
+
+    <section class="border-4 border-[var(--color-border)] bg-[var(--color-neutral-surface)] p-[var(--spacing-xl)] shadow-[var(--shadow-pixel)] mb-[var(--spacing-2xl)]">
+      <h2 class="text-[1rem] text-[var(--color-secondary)] mb-[var(--spacing-lg)]">
+        PLAYER PROFILE
+      </h2>
+      <p class="text-[0.75rem] mb-[var(--spacing-md)]">
+        跨领域开发者，在量化交易、AI 应用、写作和全栈开发之间切换。相信"做对的事情，把事情做对"，用系统化的方法论驱动学习和产出。
+      </p>
+      <p class="text-[0.75rem] text-[var(--color-muted)]">
+        这个网站是我的公开知识库——把 Obsidian 里的思考搬到阳光下，倒逼自己整理和输出。
+      </p>
+    </section>
+
+    <section class="mb-[var(--spacing-2xl)]">
+      <h2 class="text-[1.25rem] text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
+        SKILL TREE
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-md)]">
+        {skills.map(group => (
+          <div class="border-4 border-[var(--color-border)] bg-[var(--color-neutral-surface)] p-[var(--spacing-lg)] shadow-[var(--shadow-pixel)]">
+            <h3 class="text-[0.75rem] text-[var(--color-accent)] mb-[var(--spacing-md)]">
+              {group.category}
+            </h3>
+            <ul class="list-none p-0 m-0">
+              {group.items.map(item => (
+                <li class="text-[0.625rem] text-[var(--color-on-neutral)] mb-[var(--spacing-xs)] flex items-center gap-[var(--spacing-sm)]">
+                  <span class="text-[var(--color-tertiary)]">▸</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Base>

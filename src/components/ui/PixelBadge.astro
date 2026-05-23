@@ -1,0 +1,19 @@
+---
+interface Props {
+  color?: 'blue' | 'red' | 'green' | 'yellow';
+  class?: string;
+}
+
+const { color = 'blue', class: className = '' } = Astro.props;
+
+const colors = {
+  blue: 'bg-[var(--color-secondary)] text-[var(--color-on-primary)]',
+  red: 'bg-[var(--color-primary)] text-[var(--color-on-primary)]',
+  green: 'bg-[var(--color-tertiary)] text-[var(--color-on-primary)]',
+  yellow: 'bg-[var(--color-accent)] text-[var(--color-on-neutral)]',
+};
+---
+
+<span class:list={['inline-block text-[0.625rem] px-[var(--spacing-sm)] py-[var(--spacing-xs)] border-2 border-[var(--color-border)] shadow-[var(--shadow-pixel-sm)]', colors[color], className]}>
+  <slot />
+</span>

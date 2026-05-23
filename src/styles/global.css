@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Mario style from DESIGN.md */
+  --color-primary: #E52521;
+  --color-secondary: #049CD8;
+  --color-tertiary: #43B047;
+  --color-accent: #FBD000;
+  --color-neutral: #FFFFFF;
+  --color-neutral-surface: #F5F0E6;
+  --color-on-primary: #FFFFFF;
+  --color-on-neutral: #1A1A1A;
+  --color-success: #43B047;
+  --color-warning: #FBD000;
+  --color-error: #E52521;
+  --color-muted: #C4B99A;
+  --color-border: #3E2723;
+
+  /* Spacing - 8px grid */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', monospace;
+
+  /* Elevation - pixel hard shadows with brown border color */
+  --shadow-pixel: 4px 4px 0 #3E2723;
+  --shadow-pixel-sm: 2px 2px 0 #3E2723;
+  --shadow-pixel-hover: 6px 6px 0 #3E2723;
+}
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+html {
+  background-color: var(--color-neutral);
+  color: var(--color-on-neutral);
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  line-height: 1.8;
+  image-rendering: pixelated;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-on-neutral);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

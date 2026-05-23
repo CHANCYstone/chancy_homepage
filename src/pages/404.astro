@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PixelButton from '../components/ui/PixelButton.astro';
+---
+
+<Base title="404">
+  <main class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+    <h1 class="text-[2rem] text-[var(--color-primary)] mb-[var(--spacing-lg)]">
+      YOU DIED
+    </h1>
+    <p class="text-[0.75rem] text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
+      This page doesn't exist.
+    </p>
+    <PixelButton href="/">
+      RESPAWN →
+    </PixelButton>
+  </main>
+</Base>
