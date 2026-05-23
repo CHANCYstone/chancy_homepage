@@ -18,14 +18,14 @@ const contacts = [
     </h1>
 
     <div class="border-4 border-[var(--color-border)] bg-[var(--color-neutral-surface)] p-[var(--spacing-xl)] shadow-[var(--shadow-pixel)] mb-[var(--spacing-xl)]">
-      <p class="text-[0.75rem] text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
+      <p class="text-sm text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
         想组队？有任务要接？邮件是最快的传送门。
       </p>
 
       <div class="flex flex-col gap-[var(--spacing-lg)]">
         {contacts.map(contact => (
           <div class="flex flex-col gap-[var(--spacing-sm)]">
-            <span class="text-[0.625rem] text-[var(--color-accent)]">
+            <span class="font-[var(--font-pixel)] text-[0.5rem] text-[var(--color-accent)]">
               {contact.label}
             </span>
             <PixelButton href={contact.href} variant="secondary">

@@ -25,7 +25,8 @@
   --spacing-2xl: 48px;
 
   /* Typography */
-  --font-pixel: 'Press Start 2P', monospace;
+  --font-pixel: 'Press Start 2P', 'Noto Sans SC', sans-serif;
+  --font-body: 'Noto Sans SC', system-ui, sans-serif;
 
   /* Elevation - pixel hard shadows with brown border color */
   --shadow-pixel: 4px 4px 0 #3E2723;
@@ -42,10 +43,14 @@
 html {
   background-color: var(--color-neutral);
   color: var(--color-on-neutral);
-  font-family: var(--font-pixel);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.8;
   image-rendering: pixelated;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-pixel);
 }
 
 body {

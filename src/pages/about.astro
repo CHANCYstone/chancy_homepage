@@ -48,17 +48,17 @@ const stats = [
       <div class="flex flex-col gap-[var(--spacing-sm)] mb-[var(--spacing-lg)]">
         {stats.map(stat => (
           <div class="flex items-baseline gap-[var(--spacing-md)]">
-            <span class="text-[0.625rem] text-[var(--color-accent)] min-w-[60px]">{stat.label}</span>
-            <span class="text-[0.625rem] text-[var(--color-on-neutral)]">{stat.value}</span>
+            <span class="font-[var(--font-pixel)] text-[0.5rem] text-[var(--color-accent)] min-w-[60px]">{stat.label}</span>
+            <span class="text-sm text-[var(--color-on-neutral)]">{stat.value}</span>
           </div>
         ))}
       </div>
 
       <div class="border-t-2 border-[var(--color-border)] pt-[var(--spacing-md)]">
-        <p class="text-[0.75rem] mb-[var(--spacing-md)]">
+        <p class="text-sm mb-[var(--spacing-md)]">
           在量化交易、AI 应用、写作和全栈开发之间切换的跨领域开发者。相信系统化方法论的力量——先想清楚该做什么，再把它做到极致。
         </p>
-        <p class="text-[0.75rem] text-[var(--color-muted)]">
+        <p class="text-sm text-[var(--color-muted)]">
           这个网站是我的公开知识库——把 Obsidian 里的思考搬到阳光下，倒逼自己整理和输出。
         </p>
       </div>
@@ -77,9 +77,9 @@ const stats = [
             <ul class="list-none p-0 m-0">
               {group.items.map(item => (
                 <li class="mb-[var(--spacing-sm)]">
-                  <div class="flex justify-between text-[0.625rem] text-[var(--color-on-neutral)] mb-[2px]">
+                  <div class="flex justify-between text-xs text-[var(--color-on-neutral)] mb-[2px]">
                     <span>{item.name}</span>
-                    <span class="text-[var(--color-muted)]">Lv.{Math.floor(item.level / 10)}</span>
+                    <span class="font-[var(--font-pixel)] text-[0.5rem] text-[var(--color-muted)]">Lv.{Math.floor(item.level / 10)}</span>
                   </div>
                   <div class="h-[8px] bg-[var(--color-neutral)] border-2 border-[var(--color-border)]">
                     <div class="h-full bg-[var(--color-tertiary)] skill-bar" style={`width: ${item.level}%`}></div>

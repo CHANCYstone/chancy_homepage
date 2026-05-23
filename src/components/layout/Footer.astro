@@ -7,7 +7,7 @@ const links = [
 
 <footer class="border-t-4 border-[var(--color-border)] pt-[var(--spacing-lg)] mt-[var(--spacing-2xl)]">
   <div class="flex flex-wrap items-center justify-between gap-[var(--spacing-md)]">
-    <p class="text-[0.625rem] text-[var(--color-muted)]">
+    <p class="text-xs text-[var(--color-muted)]">
       © 2026 ChancyStone
     </p>
     <ul class="flex gap-[var(--spacing-lg)] list-none m-0 p-0">
@@ -17,7 +17,7 @@ const links = [
             href={link.href}
             target={link.href.startsWith('http') ? '_blank' : undefined}
             rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="text-[0.625rem] text-[var(--color-on-neutral)] hover:text-[var(--color-secondary)]"
+            class="font-[var(--font-pixel)] text-[0.5rem] text-[var(--color-on-neutral)] hover:text-[var(--color-secondary)]"
           >
             {link.label}
           </a>

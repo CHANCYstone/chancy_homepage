@@ -31,7 +31,7 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
       {categories.map(cat => (
         <button
           data-filter={cat}
-          class="filter-btn bg-[var(--color-neutral)] text-[var(--color-on-neutral)] border-4 border-[var(--color-border)] px-[var(--spacing-md)] py-[var(--spacing-sm)] text-[0.625rem] shadow-[var(--shadow-pixel-sm)] cursor-pointer hover:bg-[var(--color-accent)] hover:text-[var(--color-on-neutral)]"
+          class="filter-btn font-[var(--font-pixel)] bg-[var(--color-neutral)] text-[var(--color-on-neutral)] border-4 border-[var(--color-border)] px-[var(--spacing-md)] py-[var(--spacing-sm)] text-[0.5rem] shadow-[var(--shadow-pixel-sm)] cursor-pointer hover:bg-[var(--color-accent)] hover:text-[var(--color-on-neutral)]"
         >
           {cat.toUpperCase()}
         </button>
@@ -47,13 +47,13 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
                 {project.data.category.toUpperCase()}
               </PixelBadge>
             </div>
-            <h3 class="text-[0.75rem] text-[var(--color-on-neutral)] mb-[var(--spacing-sm)]">
+            <h3 class="text-sm text-[var(--color-on-neutral)] mb-[var(--spacing-sm)]">
               {project.data.title}
             </h3>
-            <p class="text-[0.5rem] text-[var(--color-muted)] mb-[var(--spacing-xs)]">
+            <p class="text-xs text-[var(--color-muted)] mb-[var(--spacing-xs)]">
               {project.data.date}
             </p>
-            <p class="text-[0.625rem] text-[var(--color-on-neutral)] line-clamp-2">
+            <p class="text-xs text-[var(--color-on-neutral)] line-clamp-2">
               {project.data.summary}
             </p>
           </PixelCard>

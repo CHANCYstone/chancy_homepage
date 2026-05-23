@@ -5,12 +5,12 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
 <section class="text-center py-[var(--spacing-2xl)]">
   <div class="mb-[var(--spacing-lg)]">
-    <span class="inline-block text-[2.5rem] text-[var(--color-primary)] pixel-title">
+    <span class="inline-block font-[var(--font-pixel)] text-[2.5rem] text-[var(--color-primary)] pixel-title">
       ChancyStone
     </span>
   </div>
-  <p class="text-[0.75rem] text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
-    做对的事情 把事情做对<span class="blink-cursor">_</span>
+  <p class="text-base text-[var(--color-on-neutral)] mb-[var(--spacing-xl)] tracking-widest">
+    做对的事情 把事情做对<span class="blink-cursor font-[var(--font-pixel)]">_</span>
   </p>
   <PixelButton href={`${base}projects`}>
     ENTER DUNGEON
