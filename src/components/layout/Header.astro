@@ -1,17 +1,23 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const navItems = [
-  { label: 'HOME', href: '/' },
-  { label: 'ABOUT', href: '/about' },
-  { label: 'PROJECTS', href: '/projects' },
-  { label: 'CONTACT', href: '/contact' },
+  { label: 'HOME', href: base },
+  { label: 'ABOUT', href: `${base}about` },
+  { label: 'PROJECTS', href: `${base}projects` },
+  { label: 'CONTACT', href: `${base}contact` },
 ];
 
 const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === base) return currentPath === base || currentPath === base.slice(0, -1);
+  return currentPath.startsWith(href);
+}
 ---
 
 <header class="border-b-4 border-[var(--color-border)] pb-[var(--spacing-md)] mb-[var(--spacing-2xl)]">
   <nav class="flex flex-wrap items-center justify-between gap-[var(--spacing-md)]">
-    <a href="/" class="text-[1rem] text-[var(--color-primary)] hover:text-[var(--color-accent)]">
+    <a href={base} class="text-[1rem] text-[var(--color-primary)] hover:text-[var(--color-accent)]" style="text-shadow: 2px 2px 0 var(--color-border);">
       ChancyStone
     </a>
     <ul class="flex flex-wrap gap-[var(--spacing-lg)] list-none m-0 p-0">
@@ -21,7 +27,7 @@ const currentPath = Astro.url.pathname;
             href={item.href}
             class:list={[
               'text-[0.625rem]',
-              currentPath === item.href
+              isActive(item.href)
                 ? 'text-[var(--color-primary)]'
                 : 'text-[var(--color-on-neutral)] hover:text-[var(--color-secondary)]',
             ]}

@@ -1,15 +1,30 @@
 ---
 import PixelButton from '../ui/PixelButton.astro';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <section class="text-center py-[var(--spacing-2xl)]">
-  <h1 class="text-[2rem] text-[var(--color-primary)] mb-[var(--spacing-lg)]">
-    ChancyStone
-  </h1>
+  <div class="mb-[var(--spacing-lg)]">
+    <span class="inline-block text-[2.5rem] text-[var(--color-primary)] pixel-title">
+      ChancyStone
+    </span>
+  </div>
   <p class="text-[0.75rem] text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
-    做对的事情 把事情做对
+    做对的事情 把事情做对<span class="blink-cursor">_</span>
   </p>
-  <PixelButton href="/projects">
+  <PixelButton href={`${base}projects`}>
     ENTER DUNGEON
   </PixelButton>
 </section>
+
+<style>
+  .blink-cursor {
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  .pixel-title {
+    text-shadow: 4px 4px 0 var(--color-border);
+  }
+</style>

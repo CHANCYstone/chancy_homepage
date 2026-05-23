@@ -6,6 +6,7 @@ import PixelCard from '../../components/ui/PixelCard.astro';
 import PixelBadge from '../../components/ui/PixelBadge.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const allProjects = await getCollection('projects');
 const sorted = allProjects.sort((a, b) => b.data.date.localeCompare(a.data.date));
 
@@ -40,7 +41,7 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-md)]" id="projects-grid">
       {sorted.map(project => (
         <div data-category={project.data.category} class="project-item">
-          <PixelCard href={`/projects/${project.id}`}>
+          <PixelCard href={`${base}projects/${project.id}`}>
             <div class="mb-[var(--spacing-sm)]">
               <PixelBadge color={badgeColors[project.data.category]}>
                 {project.data.category.toUpperCase()}
@@ -64,10 +65,25 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
 </Base>
 
 <script>
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.project-item');
+
+  function setActive(activeBtn: Element) {
+    buttons.forEach(b => {
+      const el = b as HTMLElement;
+      el.style.backgroundColor = '';
+      el.style.color = '';
+      el.style.borderColor = '';
+    });
+    const el = activeBtn as HTMLElement;
+    el.style.backgroundColor = 'var(--color-accent)';
+    el.style.borderColor = 'var(--color-border)';
+  }
+
+  buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = (btn as HTMLElement).dataset.filter;
-      document.querySelectorAll('.project-item').forEach(item => {
+      items.forEach(item => {
         const el = item as HTMLElement;
         if (filter === 'all' || el.dataset.category === filter) {
           el.style.display = '';
@@ -75,10 +91,9 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
           el.style.display = 'none';
         }
       });
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        (b as HTMLElement).style.backgroundColor = '';
-      });
-      (btn as HTMLElement).style.backgroundColor = 'var(--color-accent)';
+      setActive(btn);
     });
   });
+
+  if (buttons.length > 0) setActive(buttons[0]);
 </script>

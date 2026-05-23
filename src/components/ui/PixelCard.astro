@@ -8,9 +8,18 @@ const { href, class: className = '' } = Astro.props;
 
 const Tag = href ? 'a' : 'div';
 
-const base = 'block bg-[var(--color-neutral-surface)] text-[var(--color-on-neutral)] border-4 border-[var(--color-border)] shadow-[var(--shadow-pixel)] p-[var(--spacing-lg)] hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-pixel-hover)]';
+const baseClass = 'pixel-card block bg-[var(--color-neutral-surface)] text-[var(--color-on-neutral)] border-4 border-[var(--color-border)] shadow-[var(--shadow-pixel)] p-[var(--spacing-lg)] hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-pixel-hover)]';
 ---
 
-<Tag href={href} class:list={[base, className]}>
+<Tag href={href} class:list={[baseClass, className]}>
   <slot />
 </Tag>
+
+<style>
+  .pixel-card {
+    transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+  }
+  .pixel-card:hover {
+    transform: translateY(-2px);
+  }
+</style>

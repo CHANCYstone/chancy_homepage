@@ -9,7 +9,7 @@ const { href, variant = 'primary', class: className = '' } = Astro.props;
 
 const Tag = href ? 'a' : 'button';
 
-const base = 'inline-block text-[0.75rem] font-[var(--font-pixel)] px-[var(--spacing-lg)] py-[var(--spacing-md)] border-4 border-[var(--color-border)] cursor-pointer';
+const baseClass = 'pixel-btn inline-block text-[0.75rem] font-[var(--font-pixel)] px-[var(--spacing-lg)] py-[var(--spacing-md)] border-4 border-[var(--color-border)] cursor-pointer transition-transform duration-100';
 
 const variants = {
   primary: 'bg-[var(--color-primary)] text-[var(--color-on-primary)] shadow-[var(--shadow-pixel)] hover:bg-[var(--color-accent)] hover:text-[var(--color-on-neutral)] hover:shadow-[var(--shadow-pixel-hover)]',
@@ -17,6 +17,13 @@ const variants = {
 };
 ---
 
-<Tag href={href} class:list={[base, variants[variant], className]}>
+<Tag href={href} class:list={[baseClass, variants[variant], className]}>
   <slot />
 </Tag>
+
+<style>
+  .pixel-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-border) !important;
+  }
+</style>

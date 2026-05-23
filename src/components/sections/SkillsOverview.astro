@@ -1,9 +1,9 @@
 ---
 const skills = [
-  { name: '量化', icon: '📊', color: 'text-[var(--color-accent)]' },
-  { name: 'AI', icon: '🤖', color: 'text-[var(--color-primary)]' },
-  { name: '写作', icon: '✍️', color: 'text-[var(--color-tertiary)]' },
-  { name: '开发', icon: '⚡', color: 'text-[var(--color-secondary)]' },
+  { name: '量化', icon: '📊', desc: '策略研究 · 因子分析 · 回测系统', color: 'text-[var(--color-accent)]', border: 'hover:border-[var(--color-accent)]' },
+  { name: 'AI', icon: '🤖', desc: 'LLM 应用 · Agent 构建 · Prompt 工程', color: 'text-[var(--color-primary)]', border: 'hover:border-[var(--color-primary)]' },
+  { name: '写作', icon: '✍️', desc: '知识体系 · 方法论 · 认知框架', color: 'text-[var(--color-tertiary)]', border: 'hover:border-[var(--color-tertiary)]' },
+  { name: '开发', icon: '⚡', desc: '全栈工程 · 工具链 · 自动化', color: 'text-[var(--color-secondary)]', border: 'hover:border-[var(--color-secondary)]' },
 ];
 ---
 
@@ -13,12 +13,25 @@ const skills = [
   </h2>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-[var(--spacing-md)]">
     {skills.map(skill => (
-      <div class="border-4 border-[var(--color-border)] bg-[var(--color-neutral-surface)] p-[var(--spacing-lg)] text-center shadow-[var(--shadow-pixel)]">
+      <div class:list={['skill-block border-4 border-[var(--color-border)] bg-[var(--color-neutral-surface)] p-[var(--spacing-lg)] text-center shadow-[var(--shadow-pixel)]', skill.border]}>
         <div class="text-[2rem] mb-[var(--spacing-sm)]">{skill.icon}</div>
-        <h3 class:list={['text-[0.75rem]', skill.color]}>
+        <h3 class:list={['text-[0.75rem] mb-[var(--spacing-sm)]', skill.color]}>
           {skill.name}
         </h3>
+        <p class="text-[0.5rem] text-[var(--color-muted)] leading-[1.6]">
+          {skill.desc}
+        </p>
       </div>
     ))}
   </div>
 </section>
+
+<style>
+  .skill-block {
+    transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.15s ease;
+  }
+  .skill-block:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-pixel-hover);
+  }
+</style>
