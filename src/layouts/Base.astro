@@ -25,7 +25,7 @@ const pageTitle = title === 'ChancyStone' ? title : `${title} | ChancyStone`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
     <meta property="og:title" content={pageTitle} />
@@ -38,7 +38,7 @@ const pageTitle = title === 'ChancyStone' ? title : `${title} | ChancyStone`;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="mx-auto max-w-[960px] px-[var(--spacing-xl)] py-[var(--spacing-lg)]">
+    <div class="mx-auto max-w-[960px] px-[var(--spacing-xl)] py-[var(--spacing-lg)]" style="min-height: 100vh; display: flex; flex-direction: column;">
       <slot />
     </div>
   </body>

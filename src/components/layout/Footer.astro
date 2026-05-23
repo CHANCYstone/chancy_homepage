@@ -5,19 +5,19 @@ const links = [
 ];
 ---
 
-<footer class="border-t-4 border-[var(--color-border)] pt-[var(--spacing-lg)] mt-[var(--spacing-2xl)]">
+<footer class="border-t-4 border-[var(--color-border)] pt-[var(--spacing-lg)] mt-auto">
   <div class="flex flex-wrap items-center justify-between gap-[var(--spacing-md)]">
-    <p class="text-xs text-[var(--color-muted)]">
-      © 2026 ChancyStone
+    <p class="text-[var(--text-2xs)] text-[var(--color-muted)]">
+      &copy; 2026 ChancyStone
     </p>
-    <ul class="flex gap-[var(--spacing-lg)] list-none m-0 p-0">
+    <ul class="flex gap-[var(--spacing-xl)] list-none m-0 p-0">
       {links.map(link => (
         <li>
           <a
             href={link.href}
             target={link.href.startsWith('http') ? '_blank' : undefined}
             rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="font-[var(--font-pixel)] text-[0.5rem] text-[var(--color-on-neutral)] hover:text-[var(--color-secondary)]"
+            class="text-[var(--text-2xs)] text-[var(--color-on-neutral)] hover:text-[var(--color-secondary)]"
           >
             {link.label}
           </a>

@@ -29,11 +29,11 @@ ChancyStone 的 6 份 spec 文档已完成。现在要把它们落地成一个�
 
 | #  | 阶段 slug          | 一句话目标                                    | 状态        |
 |----|--------------------|-----------------------------------------------|-------------|
-| 01 | foundation         | Astro 初始化 + Tailwind + 像素 tokens + 全局布局 | not started |
-| 02 | pixel-components   | 像素风 UI 组件 + 首页实现                      | not started |
-| 03 | content-pipeline   | Obsidian 同步脚本 + Content Collections 配置   | not started |
-| 04 | remaining-pages    | 关于 / 作品集（列表+详情）/ 联系 / 404         | not started |
-| 05 | deploy             | GitHub Actions + 响应式 + SEO meta + 上线      | not started |
+| 01 | foundation         | Astro 初始化 + Tailwind + 像素 tokens + 全局布局 | completed |
+| 02 | pixel-components   | 像素风 UI 组件 + 首页实现                      | completed |
+| 03 | content-pipeline   | Obsidian 同步脚本 + Content Collections 配置   | completed |
+| 04 | remaining-pages    | 关于 / 作品集（列表+详情）/ 联系 / 404         | completed |
+| 05 | deploy             | GitHub Actions + 响应式 + SEO meta + 上线      | completed |
 
 > 状态值：`not started` / `in progress` / `completed` / `blocked` / `skipped`
 >

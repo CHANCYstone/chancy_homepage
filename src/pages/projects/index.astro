@@ -22,8 +22,8 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
 
 <Base title="Projects">
   <Header />
-  <main>
-    <h1 class="text-[2rem] text-[var(--color-primary)] mb-[var(--spacing-xl)]">
+  <main class="flex-1">
+    <h1 class="text-[var(--text-2xl)] text-[var(--color-primary)] mb-[var(--spacing-xl)]" style="text-shadow: 3px 3px 0 var(--color-border);">
       PROJECTS
     </h1>
 
@@ -31,14 +31,14 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
       {categories.map(cat => (
         <button
           data-filter={cat}
-          class="filter-btn font-[var(--font-pixel)] bg-[var(--color-neutral)] text-[var(--color-on-neutral)] border-4 border-[var(--color-border)] px-[var(--spacing-md)] py-[var(--spacing-sm)] text-[0.5rem] shadow-[var(--shadow-pixel-sm)] cursor-pointer hover:bg-[var(--color-accent)] hover:text-[var(--color-on-neutral)]"
+          class="filter-btn bg-[var(--color-neutral)] text-[var(--color-on-neutral)] border-4 border-[var(--color-border)] px-[var(--spacing-md)] py-[var(--spacing-sm)] text-[var(--text-2xs)] shadow-[var(--shadow-pixel-sm)] cursor-pointer hover:bg-[var(--color-accent)] hover:text-[var(--color-on-neutral)] transition-transform duration-100"
         >
           {cat.toUpperCase()}
         </button>
       ))}
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-md)]" id="projects-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-lg)]" id="projects-grid">
       {sorted.map(project => (
         <div data-category={project.data.category} class="project-item">
           <PixelCard href={`${base}projects/${project.id}`}>
@@ -47,13 +47,13 @@ const badgeColors: Record<string, 'blue' | 'red' | 'green' | 'yellow'> = {
                 {project.data.category.toUpperCase()}
               </PixelBadge>
             </div>
-            <h3 class="text-sm text-[var(--color-on-neutral)] mb-[var(--spacing-sm)]">
+            <h3 class="text-[var(--text-sm)] text-[var(--color-on-neutral)] mb-[var(--spacing-sm)]">
               {project.data.title}
             </h3>
-            <p class="text-xs text-[var(--color-muted)] mb-[var(--spacing-xs)]">
+            <p class="text-[var(--text-2xs)] text-[var(--color-muted)] mb-[var(--spacing-xs)]">
               {project.data.date}
             </p>
-            <p class="text-xs text-[var(--color-on-neutral)] line-clamp-2">
+            <p class="text-[var(--text-xs)] text-[var(--color-on-neutral)] line-clamp-2 leading-[2.2]">
               {project.data.summary}
             </p>
           </PixelCard>

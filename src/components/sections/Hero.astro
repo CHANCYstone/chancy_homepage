@@ -3,14 +3,14 @@ import PixelButton from '../ui/PixelButton.astro';
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<section class="text-center py-[var(--spacing-2xl)]">
-  <div class="mb-[var(--spacing-lg)]">
-    <span class="inline-block font-[var(--font-pixel)] text-[2.5rem] text-[var(--color-primary)] pixel-title">
+<section class="text-center py-[var(--spacing-3xl)]">
+  <div class="mb-[var(--spacing-xl)]">
+    <span class="inline-block text-[var(--text-4xl)] text-[var(--color-primary)] pixel-title">
       ChancyStone
     </span>
   </div>
-  <p class="text-base text-[var(--color-on-neutral)] mb-[var(--spacing-xl)] tracking-widest">
-    做对的事情 把事情做对<span class="blink-cursor font-[var(--font-pixel)]">_</span>
+  <p class="text-[var(--text-sm)] text-[var(--color-on-neutral)] mb-[var(--spacing-2xl)] tracking-[0.2em]">
+    做对的事情 把事情做对<span class="blink-cursor">_</span>
   </p>
   <PixelButton href={`${base}projects`}>
     ENTER DUNGEON
@@ -25,6 +25,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     50% { opacity: 0; }
   }
   .pixel-title {
-    text-shadow: 4px 4px 0 var(--color-border);
+    text-shadow: 3px 3px 0 var(--color-border);
   }
 </style>

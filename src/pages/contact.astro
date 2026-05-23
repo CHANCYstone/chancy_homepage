@@ -12,20 +12,20 @@ const contacts = [
 
 <Base title="Contact">
   <Header />
-  <main>
-    <h1 class="text-[2rem] text-[var(--color-primary)] mb-[var(--spacing-xl)]">
+  <main class="flex-1">
+    <h1 class="text-[var(--text-2xl)] text-[var(--color-primary)] mb-[var(--spacing-xl)]" style="text-shadow: 3px 3px 0 var(--color-border);">
       CONTACT
     </h1>
 
     <div class="border-4 border-[var(--color-border)] bg-[var(--color-neutral-surface)] p-[var(--spacing-xl)] shadow-[var(--shadow-pixel)] mb-[var(--spacing-xl)]">
-      <p class="text-sm text-[var(--color-on-neutral)] mb-[var(--spacing-xl)]">
+      <p class="text-[var(--text-xs)] text-[var(--color-on-neutral)] mb-[var(--spacing-xl)] leading-[2.4]">
         想组队？有任务要接？邮件是最快的传送门。
       </p>
 
-      <div class="flex flex-col gap-[var(--spacing-lg)]">
+      <div class="flex flex-col gap-[var(--spacing-xl)]">
         {contacts.map(contact => (
           <div class="flex flex-col gap-[var(--spacing-sm)]">
-            <span class="font-[var(--font-pixel)] text-[0.5rem] text-[var(--color-accent)]">
+            <span class="text-[var(--text-2xs)] text-[var(--color-accent)]">
               {contact.label}
             </span>
             <PixelButton href={contact.href} variant="secondary">

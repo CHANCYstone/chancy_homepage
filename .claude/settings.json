@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(brew install *)",
+      "Bash(gh --version)",
+      "Bash(git -c http.proxy=socks5://127.0.0.1:7890 -c https.proxy=socks5://127.0.0.1:7890 push -u origin main)",
+      "Bash(git -c http.proxy=http://127.0.0.1:7890 -c https.proxy=http://127.0.0.1:7890 fetch origin)",
+      "Bash(gh run *)",
+      "Bash(gh api *)",
+      "Bash(gh workflow *)",
+      "Bash(curl --noproxy localhost -s http://localhost:4321/chancy_homepage/)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

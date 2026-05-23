@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors - Mario style from DESIGN.md */
+  /* Colors - Mario style */
   --color-primary: #E52521;
   --color-secondary: #049CD8;
   --color-tertiary: #43B047;
@@ -16,22 +16,33 @@
   --color-muted: #C4B99A;
   --color-border: #3E2723;
 
-  /* Spacing - 8px grid */
-  --spacing-xs: 4px;
+  /* Spacing — Fibonacci / golden ratio (φ ≈ 1.618) */
+  --spacing-xs: 5px;
   --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
+  --spacing-md: 13px;
+  --spacing-lg: 21px;
+  --spacing-xl: 34px;
+  --spacing-2xl: 55px;
+  --spacing-3xl: 89px;
 
-  /* Typography */
-  --font-pixel: 'Press Start 2P', 'Noto Sans SC', sans-serif;
-  --font-body: 'Noto Sans SC', system-ui, sans-serif;
+  /* Typography — all pixel */
+  --font-pixel: 'Press Start 2P', monospace;
 
-  /* Elevation - pixel hard shadows with brown border color */
-  --shadow-pixel: 4px 4px 0 #3E2723;
+  /* Font sizes — golden ratio scale from 8px base */
+  --text-2xs: 7px;
+  --text-xs: 8px;
+  --text-sm: 10px;
+  --text-base: 13px;
+  --text-lg: 16px;
+  --text-xl: 21px;
+  --text-2xl: 26px;
+  --text-3xl: 34px;
+  --text-4xl: 42px;
+
+  /* Elevation */
+  --shadow-pixel: 3px 3px 0 #3E2723;
   --shadow-pixel-sm: 2px 2px 0 #3E2723;
-  --shadow-pixel-hover: 6px 6px 0 #3E2723;
+  --shadow-pixel-hover: 5px 5px 0 #3E2723;
 }
 
 *,
@@ -43,14 +54,10 @@
 html {
   background-color: var(--color-neutral);
   color: var(--color-on-neutral);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.8;
-  image-rendering: pixelated;
-}
-
-h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-pixel);
+  font-size: var(--text-base);
+  line-height: 2;
+  image-rendering: pixelated;
 }
 
 body {
